@@ -1,0 +1,167 @@
+main {
+    background-color: #1d2630;
+    border: solid 1px rgb(62, 72, 83);
+    height: 600px;
+    width: 100%;
+}
+
+header {
+    padding: 0.5rem;
+    border-bottom: solid 1px rgb(62, 72, 83);
+}
+
+header .title {
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.input {
+    position: relative;
+}
+
+.form-error {
+    color: #932323;
+    font-size: 0.8rem;
+    animation: fadeIn 0.2s ease-in-out;
+    position: absolute;
+}
+
+.main-content {
+    padding: 1rem;
+}
+
+.task-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 200px);
+    gap: 3rem;
+    justify-items: center;
+    justify-content: center;
+}
+
+.persons {
+    margin-top: 2rem;
+    overflow-y: auto;
+    height: 280px;
+    padding-right: 0.2rem;
+}
+
+.persons-box {
+    max-height: 500px;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+}
+
+.person {
+    border-bottom: solid 1px rgb(62, 72, 83);
+    margin-bottom: 1rem;
+}
+
+.persons .title {
+    font-size: 1.2rem;
+}
+
+.persons-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    justify-items: center;
+}
+
+.person-info {
+    display: grid;
+    grid-template-rows: 16px 1fr 1fr;
+    gap: 1.3rem;
+    align-items: end;
+    justify-items: start;
+}
+
+.skills {
+    display: grid;
+    grid-template-rows: 16px 1fr;
+    gap: 1rem;
+    align-items: end;
+    justify-items: start;
+}
+
+.skills-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    border: solid 1px rgb(62, 72, 83);
+    padding: 0.5rem;
+    border-radius: 3px;
+    height: 107px;
+    overflow-y: auto;
+}
+
+.skill {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    justify-items: center;
+}
+
+.skill app-input {
+    height: max-content;
+}
+
+.skill-action-btn {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: max-content;
+    gap: 0.3rem;
+    margin-top: 0.6rem;
+}
+
+i {
+    border-radius: 9999px;
+    padding: 0.1rem;
+    user-select: none;
+    cursor: pointer;
+    transition: filter 0.15s ease-in-out;
+}
+
+i:hover {
+    filter: brightness(70%);
+}
+
+i.add {
+    border: solid 1px #299573;
+    color: #299573;
+}
+
+i.remove {
+    border: solid 1px #c82627;
+    color: #c82627;
+}
+
+.person-action-btn {
+    display: grid;
+    grid-template-columns: 28.31px 28.31px;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.button-action-btn {
+    margin: 0;
+}
+
+.button-action-btn button {
+    background-color: #4277ea;
+    border: none;
+    outline: none;
+    padding: 0.5rem;
+    border-radius: 7px;
+    transition: filter 0.15s ease-in-out;
+    cursor: pointer;
+}
+
+.button-action-btn button:hover {
+    filter: brightness(70%);
+}
+
+@media (max-width: 518px) {
+    .task-info {
+        gap: 1rem;
+    }
+}

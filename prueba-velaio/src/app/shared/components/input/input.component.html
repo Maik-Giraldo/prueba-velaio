@@ -1,0 +1,8 @@
+<div class="input">
+    <input #input (click)="onClick()" (input)="onChange($any($event.target).value)" (blur)="onTouched(); blur.emit()"
+        [disabled]="disabled" [type]="type == 'date' ? 'text' : type" [placeholder]="placeholder" 
+        [readOnly]="type == 'date'"/>
+
+    <input #inputDate (change)="writeValue($any($event.target).value); onTouched()"
+        type="datetime-local" *ngIf="type == 'date'">
+</div>

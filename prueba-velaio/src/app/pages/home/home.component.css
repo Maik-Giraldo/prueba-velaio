@@ -1,0 +1,57 @@
+h1 {
+    margin-block: 1rem;
+    text-align: center;
+}
+
+.table {
+    display: block;
+    max-width: 1200px;
+    margin: auto;
+}
+
+header {
+    display: grid;
+    height: 60px;
+    grid-template-columns: 1fr auto;
+    border-radius: 6px;
+    align-items: center;
+    padding-inline: 0.5rem;
+    background-color: #1d2630;
+}
+
+.filters span {
+    vertical-align: -3px;
+}
+
+.tasks {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.no-task {
+    margin-top: 1rem;
+}
+
+.create-task {
+    background-color: #4680ff;
+    border: none;
+    outline: none;
+    color: #fff;
+    padding: 0.57rem;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-right: 1rem;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.create-task:hover {
+    background-color: #364f85;
+}
+
+@media (max-width: 547px) {
+    .tasks {
+        grid-template-columns: 1fr;
+    }
+}

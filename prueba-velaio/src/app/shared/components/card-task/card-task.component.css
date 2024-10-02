@@ -1,0 +1,127 @@
+.card {
+    height: 200px;
+    width: 270px;
+    background-color: #1b242d;
+    border: solid 1px rgb(62, 72, 83);
+    border-radius: 13px;
+    padding: 0.5rem;
+    margin-top: 1rem;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    margin-bottom: 0.5rem;
+}
+
+header .title {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 140px;
+}
+
+small {
+    font-size: 12px;
+}
+
+i {
+    transition: filter 0.2s ease-in-out;
+    cursor: pointer;
+    user-select: none;
+}
+
+i:hover {
+    filter: brightness(0.8);
+}
+
+i.completed {
+    color: #2ca87f;
+}
+
+i.pending {
+    color: #1c76da;
+}
+
+.content {
+    display: grid;
+    gap: 0.5rem;
+    height: 150px;
+    overflow-y: auto;
+}
+
+.person {
+    background-color: #212e3c;
+    border-radius: 6px;
+    padding: 0.5rem;
+}
+
+.person .name {
+    display: block;
+    font-size: 13px;
+    color: rgb(190, 200, 208);
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 225px;
+}
+
+.skills-title {
+    display: block;
+    font-size: 13px;
+    margin-top: 0.3rem;
+}
+
+.skills span {
+    width: max-content;
+    padding-inline: 0.3rem;
+    border-radius: 6px;
+    margin-right: 0.4rem;
+    font-size: 12px;
+}
+
+.skill-color-1 {
+    background-color: #216e4e;
+}
+
+.skill-color-2 {
+    background-color: #7f5f01;
+}
+
+.skill-color-3 {
+    background-color: #702e00;
+}
+
+.skill-color-4 {
+    background-color: #a54800;
+}
+
+.skill-color-5 {
+    background-color: #ae2e24;
+}
+
+.skill-color-6 {
+    background-color: #f87168;
+}
+
+.skill-color-7 {
+    background-color: #352c63;
+}            
+
+.skill-color-8 {
+    background-color: #0055cc;
+}
+
+@media (max-width: 547px) {
+    .card {
+        width: 100%;
+    }
+
+    .person .name {
+        width: 300px;
+    }
+
+    header .title {
+        width: 230px;
+    }
+}

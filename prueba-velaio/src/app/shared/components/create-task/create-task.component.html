@@ -1,0 +1,107 @@
+<main>
+    <header>
+        <h1 class="title">Crear tarea</h1>
+    </header>
+
+    <div class="main-content">
+        <div class="task-info">
+            <div class="input">
+                <app-input [formControl]="mainForm.name" placeholder="Nombre"></app-input>
+
+                <span class="form-error" *ngIf="mainForm.name.errors?.['required'] 
+                    && mainForm.name.touched">El nombre
+                    es obligatorio</span>
+            </div>
+
+            <div class="input">
+                <app-input [formControl]="mainForm.limit_date" placeholder="Fecha límite" type="date"></app-input>
+                
+                <span class="form-error" *ngIf="mainForm.limit_date.errors?.['required'] 
+                    && mainForm.limit_date.touched">
+                    La fecha límite es obligatoria
+                </span>
+                <span class="form-error" *ngIf="mainForm.limit_date.errors?.['minDateNow'] 
+                    && mainForm.limit_date.touched">
+                    La fecha límite debe ser posterior a la fecha actual
+                </span>
+            </div>
+        </div>
+
+        <div class="persons scroll-2">
+            <h1 class="title">Personas asociadas</h1>
+
+            <div class="persons-box scroll-2">
+                <div class="person" *ngFor="let person of mainForm.persons; index as iPerson">
+                    <div class="persons-content">
+                        <div class="person-info">
+                            <small>Información personal</small>
+
+                            <div class="input">
+                                <app-input [formControl]="person.full_name" placeholder="Nombre completo"></app-input>
+                                
+                                <span class="form-error" *ngIf="person.full_name.errors?.['required'] 
+                                    && person.full_name.touched">
+                                    El nombre es obligatorio
+                                </span>
+
+                                <span class="form-error" *ngIf="person.full_name.errors?.['minlength'] 
+                                    && person.full_name.touched">
+                                    Debe tener al menos 5 caracteres
+                                </span>
+                            </div>
+
+                            <div class="input">
+                                <app-input [formControl]="person.age" placeholder="Edad" type="number"></app-input>
+
+                                <span class="form-error" *ngIf="person.age.errors?.['required'] 
+                                    && person.age.touched">
+                                    La edad es obligatoria
+                                </span>
+
+                                <span class="form-error" *ngIf="person.age.errors?.['min'] 
+                                    && person.age.touched">
+                                    Debe tener al menos 18 años
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="skills">
+                            <small>Habilidades</small>
+
+                            <div class="skills-content scroll-2">
+                                <div class="skill" *ngFor="let skill of person.skills; index as iSkill">
+                                    <div class="input">
+                                        <app-input [formControl]="skill" placeholder="Habilidad"></app-input>
+
+                                        <span class="form-error" *ngIf="skill.errors?.['required'] 
+                                            && skill.touched">
+                                            La habilidad es obligatoria
+                                        </span>
+                                    </div>
+
+                                    <div class="skill-action-btn">
+                                        <i class="material-icons-outlined add" title="Agregar habilidad"
+                                            (click)="addPersonSkill(person)">add</i>
+                                        <i class="material-icons-outlined remove" title="Borrar habilidad"
+                                            (click)="removePersonSkill(person, iSkill)">delete</i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="person-action-btn">
+                        <i class="material-icons-outlined add" title="Agregar persona"
+                            (click)="addPerson()">person_add</i>
+                        <i class="material-icons-outlined remove" title="Borrar persona"
+                            (click)="removePerson(iPerson)">person_remove</i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="button-action-btn">
+            <button class="create-task" (click)="createTask()">Guardar tarea</button>
+        </div>
+    </div>
+</main>

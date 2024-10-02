@@ -1,0 +1,22 @@
+<main>
+    <h1>Prueba de Velaio</h1>
+
+    <div class="table">
+        <header>
+            <span class="title">Lista de tareas</span>
+        
+            <div class="filters">
+                <button class="create-task" (click)="createTask()">Crear tarea</button>
+                
+                <app-dropdown (onSelectOption)="onSelectFilterStatus($event)"
+                    [options]="filterStatusOptions"></app-dropdown>
+            </div>
+        </header>
+
+        <div class="tasks scroll-1">
+            <span *ngIf="!tasks.length" class="no-task">No hay tareas disponibles</span>
+
+            <app-card-task *ngFor="let task of tasks" [task]="task" (onStatusChange)="onChangeStatusTask($event)"></app-card-task>
+        </div>
+    </div>
+</main>

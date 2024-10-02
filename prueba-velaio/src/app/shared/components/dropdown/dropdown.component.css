@@ -1,0 +1,42 @@
+main {
+    display: inline-block;
+    font-size: 14px;
+    /* position: absolute; */
+    /* right: 0; */
+}
+
+button {
+    background-color: #5b6b79;
+    border: none;
+    outline: none;
+    width: max-content;
+    border-radius: 6px;
+    padding-block: 0.36rem;
+    padding-inline: 0.6rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: #3e4f5d;
+}
+
+.content {
+    position: absolute;
+    animation: fadeIn 0.2s ease-in-out;
+    margin-top: 0.3rem;
+    background-color: #5b6b79;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.option {
+    transition: background-color 0.1s ease-in-out;
+    padding-inline: 0.6rem;
+    padding-block: 0.3rem;
+    border-radius: 6px;
+}
+
+.option:hover {
+    background-color: #2c3a45;
+}

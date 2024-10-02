@@ -1,0 +1,13 @@
+<main>
+    <button (click)="isOpen = !isOpen">
+        {{ currentOption ? currentOption.name : "Filtrar por estado" }} <i class="material-icons-outlined">
+            keyboard_arrow_down
+        </i>
+    </button>
+
+    <div class="content" *ngIf="isOpen">
+        <div class="option" *ngFor="let option of options" (click)="selectOption(option)">
+            {{ option.name }}
+        </div>
+    </div>
+</main>

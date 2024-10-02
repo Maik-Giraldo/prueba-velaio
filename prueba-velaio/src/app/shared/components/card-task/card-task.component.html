@@ -1,0 +1,42 @@
+<div class="card" *ngIf="task">
+    <header>
+        <span class="title">{{ task.name }}</span>
+        
+        <span>
+            <small>
+                {{ 
+                    task.status == StatusTaskEnum.COMPLETED ? 'Completada' :
+                    task.status == StatusTaskEnum.PENDING ? 'Pendiente' :
+                    task.status
+                }} 
+                &nbsp;</small> 
+
+            <i class="material-icons-outlined" 
+                title="Cambiar estado"
+                [class.completed]="task.status == StatusTaskEnum.COMPLETED"
+                [class.pending]="task.status == StatusTaskEnum.PENDING"
+                (click)="changeStatus(task)">
+                {{ 
+                    task.status == StatusTaskEnum.COMPLETED ? 'check_circle' :
+                    task.status == StatusTaskEnum.PENDING ? 'timer' :
+                    task.status
+                }}
+            </i>
+        </span>
+    </header>
+
+    <div class="content scroll-2">
+        <div class="person" *ngFor="let person of task.persons">
+            <span class="name">{{ person.full_name }}</span>
+
+            <span class="skills-title">Habilidades:</span>
+
+            <div class="skills">
+                <span [style.backgroundColor]="skillsColors | randomBgColor" 
+                    *ngFor="let skill of person.skills">
+                    {{ skill.name }}
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
